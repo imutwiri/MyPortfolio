@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
     <!-- Navigation -->
-    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+    <header class="fixed w-full bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 shadow-sm z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-blue-500">Ian Mutwiri</a>
             <nav class="hidden md:block">
@@ -45,7 +45,7 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
             <ul class="flex flex-col space-y-4 px-4 py-4">
                 <li><a href="#home" class="block hover:text-blue-500 transition">Home</a></li>
                 <li><a href="#about" class="block hover:text-blue-500 transition">About</a></li>
@@ -86,16 +86,16 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16"><span class="border-b-2 border-blue-500 pb-2">About Me</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-16"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">About Me</span></h2>
             
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
                     <img src="Images/Students.jpg" alt="Student working" class="rounded-lg shadow-lg w-full max-w-md">
                 </div>
                 <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold mb-4">Who Am I?</h3>
+                    <h3 class="text-2xl font-semibold mb-4 dark:text-gray-500">Who Am I?</h3>
                     <p class="text-gray-600 mb-6">
                         I'm a third-year Computer Science student at Murang'a University of Technology, passionate about solving complex problems through programming. My journey in tech started when I built my first website at 19, and since then I've been deeply fascinated by the endless possibilities of technology.
                     </p>
@@ -103,27 +103,27 @@
                         Beyond academics, I actively participate in hackathons, contribute to open-source projects, and constantly work on personal projects to expand my knowledge and skills in various domains of computer science.
                     </p>
                     <div class="mb-8">
-                        <h4 class="font-semibold mb-2">Education:</h4>
-                        <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 dark:text-gray-500">Education:</h4>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                             <div class="flex items-center mb-2">
                                 <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
                                 <div>
                                     <h5 class="font-medium">Bachelor of Science in Computer Science</h5>
-                                    <p class="text-sm text-gray-500">Murang'a University of Technology | 2022 - Present</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">Murang'a University of Technology | 2022 - Present</p>
                                 </div>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
                                 <div>
                                     <h5 class="font-medium">High School</h5>
-                                    <p class="text-sm text-gray-500">Kaaga Boy's High School | 2018 - 2021</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">Kaaga Boy's High School | 2018 - 2021</p>
                                 </div>
                             </div>
                             <div class="flex items-center mt-4">
                                 <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
                                  <div>
                                     <h5 class="font-medium">Primary School</h5>
-                                    <p class="text-sm text-gray-500">New Vision Preparatory School | 2009 - 2017</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">New Vision Preparatory School | 2009 - 2017</p>
                                 </div>
                             </div>
                         </div>
@@ -145,18 +145,18 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2">My Projects</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Projects</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and passion for technology.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
                     <img src="Images/Project1.png" alt="Project 1" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">KALRO Landing Page</h3>
-                        <p class="text-gray-600 mb-4">The project is a modern, responsive website designed to showcase KALRO's mission, research, resources, news, and contact information.</p>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">The project is a modern, responsive website designed to showcase KALRO's mission, research, resources, news, and contact information.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
@@ -174,11 +174,11 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
                     <img src="Images/Project2.png" alt="Project 2" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Real-Estate</h3>
-                        <p class="text-gray-600 mb-4">A modern, responsive real estate website for property listings, company information, and client engagement.</p>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">A modern, responsive real estate website for property listings, company information, and client engagement.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
@@ -196,11 +196,11 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
                     <img src="Images/Project3.png" alt="Project 3" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">E-Learning Platform</h3>
-                        <p class="text-gray-600 mb-4">The goal of this project is to provide a user-friendly platform for learning web design and development skills.</p>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">The goal of this project is to provide a user-friendly platform for learning web design and development skills.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
@@ -218,11 +218,11 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md transition">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
                     <img src="Images/Project4.png" alt="Project 3" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">PCEA Church Management System</h3>
-                        <p class="text-gray-600 mb-4">A modern dashboard for PCEA church management. This website helps church leaders manage members, attendance, finances, events, and contributions with an easy-to-use interface, analytics, and MPESA integration.</p>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">A modern dashboard for PCEA church management. This website helps church leaders manage members, attendance, finances, events, and contributions with an easy-to-use interface, analytics, and MPESA integration.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
                             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
@@ -243,14 +243,14 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2">My Skills</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Skills</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Technologies and tools I'm proficient with and currently learning.</p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <!-- Skill 1 -->
-                <div class="skill-badge bg-gray15-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray15-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-html5 text-blue-500 text-3xl"></i>
                     </div>
@@ -261,7 +261,7 @@
                 </div>
 
                 <!-- Skill 2 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-css3 text-blue-500 text-3xl"></i>
                     </div>
@@ -272,7 +272,7 @@
                 </div>
 
                 <!-- Skill 3 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-js text-blue-500 text-3xl"></i>
                     </div>
@@ -283,7 +283,7 @@
                 </div>
 
                 <!-- Skill 4 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-python text-blue-500 text-3xl"></i>
                     </div>
@@ -294,7 +294,7 @@
                 </div>
 
                 <!-- Skill 5 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-react text-blue-500 text-3xl"></i>
                     </div>
@@ -305,7 +305,7 @@
                 </div>
 
                 <!-- Skill 6 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-git-alt text-blue-500 text-3xl"></i>
                     </div>
@@ -316,7 +316,7 @@
                 </div>
 
                 <!-- Skill 7 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-terminal text-blue-500 text-3xl"></i>
                     </div>
@@ -327,7 +327,7 @@
                 </div>
 
                 <!-- Skill 8 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-database text-blue-500 text-3xl"></i>
                     </div>
@@ -338,7 +338,7 @@
                 </div>
 
                 <!-- Skill 9 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-headphones text-blue-500 text-3xl"></i>
                     </div>
@@ -349,7 +349,7 @@
                 </div>
 
                 <!-- Skill 10 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-github text-blue-500 text-3xl"></i>
                     </div>
@@ -360,7 +360,7 @@
                 </div>
 
                 <!-- Skill 11 -->
-                <div class="skill-badge bg-gray-50 p-4 rounded-lg text-center transition transform hover:scale-105">
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
                         <i class="fab fa-php text-blue-500 text-3xl"></i>
                     </div>
@@ -374,24 +374,24 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2">Get In Touch</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">Get In Touch</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Feel free to reach out for collaborations or just to say hello!</p>
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2">
-                    <form class="bg-white p-8 rounded-lg shadow-md">
+                    <form class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-500">Name</label>
                             <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div class="mb-6">
-                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-500">Email</label>
                             <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
                         <div class="mb-6">
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-500">Message</label>
                             <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition transform hover:scale-105 w-full">
@@ -400,7 +400,7 @@
                     </form>
                 </div>
                 <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md h-full">
                         <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                         
                         <div class="space-y-6">
@@ -409,7 +409,7 @@
                                     <i class="fas fa-envelope text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">Email</h4>
                                     <a href="mailto:ianmutwiri37@gmail.com" class="text-blue-500 hover:text-blue-700">ianmutwiri37@gmail.com</a>
                                 </div>
                             </div>
@@ -419,7 +419,7 @@
                                     <i class="fab fa-linkedin-in text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">LinkedIn</h4>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">LinkedIn</h4>
                                     <a href="https://www.linkedin.com/in/ian-mutwiri-4a842a373" target="_blank" class="text-blue-500 hover:text-blue-700">linkedin.com/in/ian-mutwiri-4a842a373</a>
                                 </div>
                             </div>
@@ -429,7 +429,7 @@
                                     <i class="fab fa-github text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">GitHub</h4>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">GitHub</h4>
                                     <a href="https://github.com/imutwiri" target="_blank" class="text-blue-500 hover:text-blue-700">github.com/imutwiri</a>
                                 </div>
                             </div>
@@ -439,8 +439,8 @@
                                     <i class="fas fa-map-marker-alt text-blue-500"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Location</h4>
-                                    <p class="text-gray-600">Nairobi, Kenya (available for remote work)</p>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-500">Nairobi, Kenya (available for remote work)</p>
                                 </div>
                             </div>
                         </div>
