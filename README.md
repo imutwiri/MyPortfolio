@@ -1,20 +1,19 @@
 # Ian Mutwiri | Computer Scientist Portfolio
 
-This is my personal portfolio website, built to showcase my projects, skills, and experience as a Computer Science student and Software Developer.
+This is my personal portfolio website, designed to showcase my projects, skills, and experience as a Computer Scientist and Software Developer.
 
 ## 🌐 Live Demo
 
-[View Portfolio Live](https://imutwiri.github.io/MyPortfolio/)  
-*(If not live, you can open `index.html` locally in your browser.)*
+[View Portfolio Live](https://imutwiri.github.io/MyPortfolio/)
 
 ## 🚀 Features
 
 - Responsive design using [Tailwind CSS](https://tailwindcss.com/)
 - Dark mode / Light mode toggle (remembers your preference)
-- Animated particles background (desktop only)
+- Animated particles background (visible on all devices)
 - Project showcase with links to live demos and code
 - Skills section with proficiency bars
-- Contact form (UI only)
+- Contact form connected to a database using PHP
 - Social and contact links
 
 ## 📁 Project Structure
@@ -23,6 +22,7 @@ This is my personal portfolio website, built to showcase my projects, skills, an
 /
 ├── index.html
 ├── style.css
+├── contact.php
 ├── Images/
 │   ├── pic.jpg
 │   ├── favicon.ico
@@ -39,6 +39,7 @@ This is my personal portfolio website, built to showcase my projects, skills, an
 - JavaScript (for interactivity and dark mode)
 - [Font Awesome](https://fontawesome.com/) (icons)
 - [particles.js](https://vincentgarreau.com/particles.js/) (background animation)
+- PHP & MySQL (for contact form backend)
 
 ## 📦 Getting Started
 
@@ -48,9 +49,26 @@ This is my personal portfolio website, built to showcase my projects, skills, an
    cd MyPortfolio
    ```
 
-2. **Open `index.html` in your browser.**
+2. **Set up the database:**
+   - Create a MySQL database named `portfolio`.
+   - Create a table named `contacts`:
+     ```sql
+     CREATE TABLE contacts (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         name VARCHAR(100),
+         email VARCHAR(100),
+         message TEXT,
+         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+     );
+     ```
 
-3. *(Optional)* Deploy to GitHub Pages or your preferred hosting.
+3. **Configure your PHP backend:**
+   - Edit `contact.php` with your database credentials if needed.
+
+4. **Run locally:**
+   - Use a local server (e.g., XAMPP, WAMP, MAMP) to serve the project folder.
+
+5. **Open `index.html` in your browser.**
 
 ## ✏️ Customization
 
@@ -72,3 +90,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
+*Built with ❤️ by Ian Mutwiri*
