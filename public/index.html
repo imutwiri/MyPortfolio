@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian Mutwiri | Software Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Enable Tailwind dark mode via class strategy
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-blue-500">Ian Mutwiri</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="nav-link hover:text-blue-500 transition">Home</a></li>
+                    <li><a href="#about" class="nav-link hover:text-blue-500 transition">About</a></li>
+                    <li><a href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a></li>
+                    <li><a href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-blue-500 transition">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-200 focus:outline-none transition" aria-label="Toggle dark mode">
+                    <i id="theme-toggle-icon" class="fas fa-moon text-xl"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <ul class="flex flex-col space-y-4 px-4 py-4">
+                <li><a href="#home" class="block hover:text-blue-500 transition">Home</a></li>
+                <li><a href="#about" class="block hover:text-blue-500 transition">About</a></li>
+                <li><a href="#projects" class="block hover:text-blue-500 transition">Projects</a></li>
+                <li><a href="#skills" class="block hover:text-blue-500 transition">Skills</a></li>
+                <li><a href="#contact" class="block hover:text-blue-500 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative pt-20">
+        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hello, I'm <span class="text-blue-500">Ian Mutwiri</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Software Developer</h2>
+                <p class="text-lg mb-8 text-gray-600 max-w-lg">
+                    Passionate about creating innovative solutions through code. Currently pursuing my BSc in Computer Science with a focus on Full-Stack Development, Networking and CyberSecurity.
+                    Driven by curiosity and a desire to build useful things, I'm expanding my skills every day. 
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-full transition transform hover:scale-105">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center fade-in">
+                <div class="relative">
+                    <img src="Images/profile.jpg" alt="Profile Picture" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-8 border-white shadow-xl">
+                    <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg">
+                        <div class="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center">
+                            <span class="text-xl font-bold">CS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">About Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <img src="Images/Students.jpg" alt="Student working" class="rounded-lg shadow-lg w-full max-w-md">
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4 dark:text-gray-500">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a third-year Computer Science student at Murang'a University of Technology, passionate about solving complex problems through programming. My journey in tech started when I built my first website at 18, and since then I've been deeply fascinated by the endless possibilities of technology.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Beyond academics, I actively participate in hackathons, contribute to open-source projects, and constantly work on personal projects to expand my knowledge and skills in various domains of computer science.
+                    </p>
+                    <div class="mb-8">
+                        <h4 class="font-semibold mb-2 dark:text-gray-500">Education:</h4>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
+                                <div>
+                                    <h5 class="font-medium">Bachelor of Science in Computer Science</h5>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">Murang'a University of Technology | 2022 - Present</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
+                                <div>
+                                    <h5 class="font-medium">High School</h5>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">Kaaga Boy's High School | 2018 - 2021</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <i class="fas fa-graduation-cap text-blue-500 mr-3"></i>
+                                 <div>
+                                    <h5 class="font-medium">Primary School</h5>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500">New Vision Preparatory School | 2009 - 2017</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/imutwiri" class="text-blue-500 hover:text-blue-700">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/ian-mutwiri-4a842a373" class="text-blue-500 hover:text-blue-700">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://x.com/IanMutw63084874" class="text-blue-500 hover:text-blue-700">
+                            <i class="fab fa-x-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/254759412679" target="_blank" class="text-blue-500 hover:text-blue-700">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Projects</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and passion for technology.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
+                    <img src="Images/Project1.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">KALRO Landing Page</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">The project is a modern, responsive website designed to showcase KALRO's mission, research, resources, news, and contact information.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://kalro-landingpage.netlify.app/" class="text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/imutwiri/KALRO-Landing-Page" class="text-blue-500 hover:text-blue-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
+                    <img src="Images/Project2.png" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Real-Estate</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">A modern, responsive real estate website for property listings, company information, and client engagement.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://estate-re.netlify.app/" class="text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/imutwiri/REAL-ESTATE" class="text-blue-500 hover:text-blue-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
+                    <img src="Images/Project3.png" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Learning Platform</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">The goal of this project is to provide a user-friendly platform for learning web design and development skills.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Django</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/imutwiri/Website" class="text-blue-500 hover:text-blue-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
+                    <img src="Images/Project4.png" alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">PCEA Church Management System</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">A modern dashboard for PCEA church management. This website helps church leaders manage members, attendance, finances, events, and contributions with an easy-to-use interface, analytics, and MPESA integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://pcea-sys.netlify.app/" class="text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/imutwiri/PCEA-Church-Management-System" class="text-blue-500 hover:text-blue-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md transition">
+                    <img src="Images/Project5.png" alt="Project 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ElimuTech - Kenyan Software Development Learning Platform</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-500">ElimuTech is a Kenyan-based e-learning platform specifically designed to address the unique needs of students and professionals in Kenya's growing tech ecosystem.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Html</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://elimutechke.netlify.app/" class="text-blue-500 hover:text-blue-700">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/imutwiri/ElimuTech" class="text-blue-500 hover:text-blue-700">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Skills</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Technologies and tools I'm proficient with and currently learning.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-badge bg-gray15-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-html5 text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">Html</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-css3 text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">CSS</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-js text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">JavaScript</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-python text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">Python</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-react text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">React</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-git-alt text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">Git</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-terminal text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">Kali Linux</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 8 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-database text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">MySQL</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 9 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-headphones text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">Transcription</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 10 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-github text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">GitHub</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 11 -->
+                <div class="skill-badge bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transition transform hover:scale-105">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                        <i class="fab fa-php text-blue-500 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold">PHP</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">Get In Touch</span></h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Feel free to reach out for collaborations or just to say hello!</p>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md" id="contact-form">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 mb-2 dark:text-gray-500">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2 dark:text-gray-500">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2 dark:text-gray-500">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 text-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition transform hover:scale-105 w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">Email</h4>
+                                    <a href="mailto:ianmutwiri37@gmail.com" class="text-blue-500 hover:text-blue-700">ianmutwiri37@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fab fa-linkedin-in text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/ian-mutwiri-4a842a373" target="_blank" class="text-blue-500 hover:text-blue-700">linkedin.com/in/ian-mutwiri-4a842a373</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fab fa-github text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">GitHub</h4>
+                                    <a href="https://github.com/imutwiri" target="_blank" class="text-blue-500 hover:text-blue-700">github.com/imutwiri</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-500">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-500">Nairobi, Kenya (available for remote work)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-medium text-lg mb-4">Currently Looking For:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Internship</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Part-time Work</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Research Opportunities</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Freelance Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Ian Mutwiri</h3>
+                    <p class="text-gray-400">Software Developer</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="https://github.com/imutwiri" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ian-mutwiri-4a842a373" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://x.com/IanMutw63084874" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-x-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_m.iano/?hl=en" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+                <div>
+                    <p class="text-gray-400 text-sm">Built with HTML, CSS, and JavaScript</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Ian Mutwiri | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleIcon = document.getElementById('theme-toggle-icon');
+        const userPref = localStorage.getItem('theme');
+        const systemPrefDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        function setTheme(dark) {
+            if (dark) {
+                document.documentElement.classList.add('dark');
+                themeToggleIcon.classList.remove('fa-moon');
+                themeToggleIcon.classList.add('fa-sun');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeToggleIcon.classList.remove('fa-sun');
+                themeToggleIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Initial theme setup
+        if (userPref === 'dark' || (!userPref && systemPrefDark)) {
+            setTheme(true);
+        } else {
+            setTheme(false);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            setTheme(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Highlight active navigation link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Show/hide back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+      // Particles.js background
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load particles on all devices (including mobile)
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+            script.onload = function() {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#3b82f6"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#3b82f6",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            };
+            document.body.appendChild(script);
+        });
+        
+        //Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              message: document.getElementById('message').value
+            };
+
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            });
+
+            const result = await response.text();
+            alert(result);
+        });
+    </script>
+</body>
+</html>
