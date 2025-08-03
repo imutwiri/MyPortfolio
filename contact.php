@@ -1,15 +1,14 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Include PHPMailer files
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Database configuration
 $servername = "sql303.infinityfree.com";
@@ -23,14 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST['message']));
 
     if (empty($name) || empty($email) || empty($message)) {
-        echo "All fields are required.";
+        echo "<script>alert('All fields are required.'); window.history.back();</script>";
         exit;
     }
 
     // Save to Database
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
-        die("Database Connection Failed: " . $conn->connect_error);
+        echo "<script>alert('Database Connection Failed.'); window.history.back();</script>";
+        exit;
     }
 
     $stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail = new PHPMailer(true);
 
         try {
-            // SMTP Configuration
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
@@ -50,11 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            // Recipients
-            $mail->setFrom('ianmutwiri37@gmail.com', 'Portfolio Website');  // Sender
+            $mail->setFrom('ianmutwiri37@gmail.com', 'Portfolio Website');
             $mail->addAddress('ianmutwiri37@gmail.com');
 
-            // Content
             $mail->isHTML(true);
             $mail->Subject = "New Message from $name";
             $mail->Body    = "<h3>New Contact Form Submission</h3>
@@ -63,17 +60,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <p><strong>Message:</strong><br>$message</p>";
 
             $mail->send();
-            echo "Message sent successfully!";
+            echo "<script>alert('Message sent successfully!'); window.location.href='index.html';</script>";
         } catch (Exception $e) {
-            echo "Message saved, but email failed: {$mail->ErrorInfo}";
+            echo "<script>alert('Message saved, but email failed: {$mail->ErrorInfo}'); window.location.href='index.html';</script>";
         }
     } else {
-        echo "Failed to save message.";
+        echo "<script>alert('Failed to save message.'); window.history.back();</script>";
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    echo "Invalid request.";
+    echo "<script>alert('Invalid request.'); window.location.href='index.html';</script>";
 }
 ?>
