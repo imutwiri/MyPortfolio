@@ -1,10 +1,10 @@
-# Ian Mutwiri | Computer Scientist Portfolio
+# Ian Mutwiri | Software Developer Portfolio
 
-This is my personal portfolio website, designed to showcase my projects, skills, and experience as a Computer Scientist and Software Developer.
+This is my personal portfolio website, built to showcase my projects, skills, and experience as a Computer Scientist and Software Developer.
 
 ## 🌐 Live Demo
 
-[View Portfolio Live](https://imutwiri.github.io/MyPortfolio/)
+[View Portfolio Live](https://mutwiri-dev.vercel.app/) 
 
 ## 🚀 Features
 
@@ -13,33 +13,38 @@ This is my personal portfolio website, designed to showcase my projects, skills,
 - Animated particles background (visible on all devices)
 - Project showcase with links to live demos and code
 - Skills section with proficiency bars
-- Contact form connected to a database using PHP
+- Contact form with toast notification and backend API integration
 - Social and contact links
 
 ## 📁 Project Structure
 
 ```
 /
-├── index.html
-├── style.css
-├── contact.php
-├── Images/
-│   ├── pic.jpg
-│   ├── favicon.ico
-│   ├── Project1.png
-│   ├── Project2.png
-│   └── Project3.png
-└── (other assets)
+├── api/
+│   └── contact.js         # Node.js API handler for contact form (Vercel serverless function)
+├── public/
+│   ├── index.html         # Main portfolio page
+│   ├── style.css
+│   └── Images/
+│       ├── pic.jpg
+│       ├── favicon.ico
+│       ├── Project1.png
+│       ├── Project2.png
+│       └── Project3.png
+├── package.json           # (optional) For Node.js dependencies like nodemailer
+└── README.md
 ```
 
 ## 🛠️ Technologies Used
 
 - HTML5
 - CSS3 (with Tailwind CSS)
-- JavaScript (for interactivity and dark mode)
+- JavaScript (for interactivity, dark mode, and particles)
 - [Font Awesome](https://fontawesome.com/) (icons)
 - [particles.js](https://vincentgarreau.com/particles.js/) (background animation)
-- PHP & MySQL (for contact form backend)
+- Node.js (for API route)
+- [nodemailer](https://nodemailer.com/) (for sending emails from contact form)
+- Vercel (for deployment)
 
 ## 📦 Getting Started
 
@@ -49,32 +54,31 @@ This is my personal portfolio website, designed to showcase my projects, skills,
    cd MyPortfolio
    ```
 
-2. **Set up the database:**
-   - Create a MySQL database named `portfolio`.
-   - Create a table named `contacts`:
-     ```sql
-     CREATE TABLE contacts (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         name VARCHAR(100),
-         email VARCHAR(100),
-         message TEXT,
-         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-     );
+2. **Install dependencies (for API):**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables for email (if using nodemailer):**
+   - On Vercel, add `MY_GMAIL` and `GMAIL_APP_PASSWORD` in your project settings.
+
+4. **Deploy to Vercel:**
+   - Make sure `/api/contact.js` is at the project root (not inside `/public`).
+   - Deploy using the Vercel CLI:
+     ```bash
+     vercel
      ```
+     - When prompted for the output/public directory, type: `public`
+   - Or use the [Vercel Dashboard](https://vercel.com/dashboard).
 
-3. **Configure your PHP backend:**
-   - Edit `contact.php` with your database credentials if needed.
-
-4. **Run locally:**
-   - Use a local server (e.g., XAMPP, WAMP, MAMP) to serve the project folder.
-
-5. **Open `index.html` in your browser.**
+5. **Open your deployed site and test the contact form.**
 
 ## ✏️ Customization
 
-- Update `index.html` to add or edit your projects, skills, and contact info.
-- Replace images in the `Images/` folder with your own.
-- Edit `style.css` for custom styles.
+- Update `public/index.html` to add or edit your projects, skills, and contact info.
+- Replace images in the `public/Images/` folder with your own.
+- Edit `public/style.css` for custom styles.
+- Update `/api/contact.js` for custom backend logic.
 
 ## 🤝 Connect with Me
 
