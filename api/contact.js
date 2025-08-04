@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     });
 
     try {
-        await transporter.sendMail({
+       const info = await transporter.sendMail({
             from: email,
             to: process.env.MY_GMAIL,
             subject: `New Message from ${name}`,
