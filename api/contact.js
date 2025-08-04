@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     });
 
     try {
-       const info = await transporter.sendMail({
+        await transporter.sendMail({
             from: email,
             to: process.env.MY_GMAIL,
             subject: `New Message from ${name}`,
@@ -29,10 +29,8 @@ export default async function handler(req, res) {
                    <p><strong>Message:</strong><br>${message}</p>`
         });
 
-        console.log('Email sent successfully:', info);
         res.status(200).json({ message: 'Message sent successfully!' });
     } catch (error) {
-        console.error('Error sending email:', error);
         res.status(500).json({ message: 'Failed to send message.' });
     }
 }
