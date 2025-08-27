@@ -18,8 +18,8 @@
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
+    <!-- Global Particles Background -->
+    <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
 
     <!-- Navigation -->
     <header class="fixed w-full bg-white bg-opacity-90 dark:bg-gray-800 dark:bg-opacity-90 shadow-sm z-50">
@@ -60,7 +60,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center relative pt-20">
-        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-home" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Hello, I'm <span class="text-blue-500">Ian Mutwiri</span></h1>
                 <h2 class="text-2xl md:text-3xl font-semibold mb-6">Software Developer</h2>
@@ -91,8 +94,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section id="about" class="py-20 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-about" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-16"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">About Me</span></h2>
             
             <div class="flex flex-col md:flex-row items-center">
@@ -139,8 +145,11 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900 relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-projects" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Projects</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and passion for technology.</p>
             
@@ -291,8 +300,11 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section id="certifications" class="py-20 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-certifications" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-8">
                 <span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">Certifications</span>
             </h2>
@@ -316,8 +328,11 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-skills" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">My Skills</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Technologies and tools I'm proficient with and currently learning.</p>
             
@@ -458,8 +473,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900 relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div id="particles-contact" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
             <h2 class="text-3xl font-bold text-center mb-4"><span class="border-b-2 border-blue-500 pb-2 dark:text-gray-500">Get In Touch</span></h2>
             <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">Feel free to reach out for collaborations or just to say hello!</p>
             
@@ -680,116 +698,45 @@
             });
         });
 
-      // Particles.js background
+      // Load Particles.js for each section
         document.addEventListener('DOMContentLoaded', function() {
             // Load particles on all devices (including mobile)
             const script = document.createElement('script');
             script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
             script.onload = function() {
-                particlesJS('particles-js', {
+                const config = {
                     "particles": {
-                        "number": {
-                            "value": 80,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
-                        "color": {
-                            "value": "#3b82f6"
-                        },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            },
-                            "polygon": {
-                                "nb_sides": 5
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.5,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 2,
-                                "size_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#3b82f6",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 1,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
+                        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#3b82f6" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true },
+                        "size": { "value": 2, "random": true },
+                        "line_linked": { "enable": true, "distance": 120, "color": "#3b82f6", "opacity": 0.3, "width": 1 },
+                        "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
                     },
                     "interactivity": {
                         "detect_on": "canvas",
                         "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
+                            "onhover": { "enable": true, "mode": "grab" },
+                            "onclick": { "enable": true, "mode": "push" },
                             "resize": true
                         },
                         "modes": {
-                            "grab": {
-                                "distance": 140,
-                                "line_linked": {
-                                    "opacity": 1
-                                }
-                            },
-                            "bubble": {
-                                "distance": 400,
-                                "size": 40,
-                                "duration": 2,
-                                "opacity": 8,
-                                "speed": 3
-                            },
-                            "repulse": {
-                                "distance": 200,
-                                "duration": 0.4
-                            },
-                            "push": {
-                                "particles_nb": 4
-                            },
-                            "remove": {
-                                "particles_nb": 2
-                            }
+                            "grab": { "distance": 100, "line_linked": { "opacity": 1 } },
+                            "bubble": { "distance": 200, "size": 20, "duration": 2, "opacity": 8, "speed": 3 },
+                            "repulse": { "distance": 100, "duration": 0.4 },
+                            "push": { "particles_nb": 2 },
+                            "remove": { "particles_nb": 2 }
                         }
                     },
                     "retina_detect": true
+                };
+
+                // Initialize particles for each section
+                ['particles-home', 'particles-about', 'particles-projects', 'particles-certifications', 'particles-skills', 'particles-contact'].forEach(id => {
+                    if (document.getElementById(id)) {
+                        particlesJS(id, config);
+                    }
                 });
             };
             document.body.appendChild(script);
