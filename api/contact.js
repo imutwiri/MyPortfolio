@@ -20,6 +20,7 @@ export default async function handler(req, res) {
     });
 
     try {
+        // Send notification to me
         await transporter.sendMail({
             from: email,
             to: process.env.MY_GMAIL,
@@ -27,6 +28,18 @@ export default async function handler(req, res) {
             html: `<p><strong>Name:</strong> ${name}</p>
                    <p><strong>Email:</strong> ${email}</p>
                    <p><strong>Message:</strong><br>${message}</p>`
+        });
+
+        // Send confirmation to sender
+        await transporter.sendMail({
+            from: process.env.MY_GMAIL,
+            to: email,
+            subject: "Thank you for contacting Ian Mutwiri",
+            html: `<p>Hi ${name},</p>
+                   <p>Thank you for reaching out! I have received your message and will get back to you soon.</p>
+                   <p><em>Your message:</em></p>
+                   <blockquote>${message}</blockquote>
+                   <p>Best regards,<br>Ian Mutwiri</p>`
         });
 
         res.status(200).json({ message: 'Message sent successfully!' });
