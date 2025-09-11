@@ -94,3 +94,24 @@
     bottom: 32px;
   }
 }
+
+/* Fade and Slide Up Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.anim-fade-slide-up {
+  animation: fadeSlideUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.anim-fade-slide-up.delay-200 {
+  animation-delay: 0.2s;
+}
+.anim-fade-slide-up.delay-400 {
+  animation-delay: 0.4s;
+}
